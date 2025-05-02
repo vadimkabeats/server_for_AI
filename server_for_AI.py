@@ -10,7 +10,7 @@ app = FastAPI()
 async def read_root():
     return {"message": "Server is running"}
 # Загружаем модель один раз
-model = YOLO(r"C:\Users\vadke\PycharmProjects\Welding-Defects-Detection-master\welding_v2_aug\standart\weights\best.pt")
+model = YOLO("weights/best.pt")
 
 UPLOAD_FOLDER = "uploads"
 OUTPUT_FOLDER = "results/test_predictions"

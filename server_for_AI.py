@@ -26,7 +26,7 @@ async def predict(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     # Прогоняем через модель с визуализацией
-    model.predict(source=input_path, save=True, project="results", name="test_predictions", exist_ok=True)
+    model.predict(source=input_path, save=True, project="results", name="test_predictions", exist_ok=True, imgsz = 640)
 
     # Путь к сохраненному изображению с разметкой
     output_path = f"{OUTPUT_FOLDER}/{os.path.basename(input_path)}"
